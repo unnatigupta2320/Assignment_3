@@ -147,14 +147,7 @@ Draw a line segment $\vec{AB}$ of length 8 units. Taking $\vec{A}$ as centre dra
 
 %
 \section{Solution}
-Given that, line segment $AB$=8 units.So,Let:
-\begin{align}
-\vec{A}=\myvec{a\\0}=\myvec{0\\0} 
-\\
-\vec{B}=\myvec{b\\0}=\myvec{8\\0}    
-\end{align} 
-\\
-Further the given data is tabularised in table \ref{tab:table1}:
+The given data is tabularised in table \ref{tab:table1}:
 \numberwithin{table}{section}
 \begin{table}[!ht]
 \begin{center}
@@ -162,74 +155,118 @@ Further the given data is tabularised in table \ref{tab:table1}:
 \hline
  & Symbols & Circle1 & Circle2 \\
 \hline
-Centre & $\vec{O}$ & \myvec{0\\0} & \myvec{8\\0} \\ 
+Centre & $\vec{A}$,$\vec{B}$ & \myvec{0\\0} & \myvec{8\\0} \\ 
 \hline
 Radius & $r_{1}$,$r_{2}$ & 4 & 3 \\ 
-\hline
-Polar coordinates & $\vec{C}_{1}$,$\vec{C}_{2}$ & 4\myvec{\cos \theta\\  \sin \theta} & 3\myvec{\cos \theta\\  \sin \theta} \\
-\hline
-Angle & $\theta$ & 0-2$\pi$ & 0-2$\pi$ \\
 \hline
 \end{tabular}
 \end{center}
 \caption{Input values}
 \label{tab:table1}
 \end{table}
-\begin{enumerate}
-    \item For tangents at \textbf{Circle1} from $\vec{B}$:-
 \begin{itemize}
-\item Let $BP$ and $BQ$  be tangents to \textbf{Circle1} with radius 4 units.
-\item We know a tangent is always perpendicular to the radius .
+    \item Also, it is given that line segment $AB$=8 units.So,Let:
 \begin{align}
-\therefore AP \perp BP ,  AQ \perp BQ.
+\vec{A}=\myvec{0\\0} ,\vec{B}=\myvec{8\\0}    
+\end{align} 
+\end{itemize}
+\begin{enumerate}
+    \item To find coordinates of points where tangent touches the circle.
+\begin{itemize}
+    \item Let $\vec{M}$ be any point on x-axis whose coordinates are:
+    \begin{align}
+    \vec{M} =\myvec{x\textsubscript{1} \\0} \label{eq1}
+    \end{align}
+    \item Tangents are drawn from $\vec{M}$ to any circle with centre $\vec{O}$.
+\end{itemize}
+\begin{lemma}
+\label{lemma}
+The coordinates of points $\vec{L\textsubscript{1}}$ and $\vec{L\textsubscript{2}}$ where tangent touches the circle are given by:
+\begin{align}
+\vec{L}=\vec{l}+\lambda \vec{m} \label{eq2}
+\\
+\text{ where, }  \lambda = \pm\sqrt{\frac{\norm{\vec{L}}^2-\norm{\vec{l}}}{\norm{\vec{m}}^2}}
+\\
+\vec{l}=\myvec{\frac{\norm{\vec{L}}^2}{x\textsubscript{1}}\\0}
+\\
+\vec{m}=\myvec{0\\1} 
 \end{align}
+\end{lemma}
+\begin{proof}
+We know a tangent is always perpendicular to the radius .
+\begin{align}
+\therefore L\textsubscript{1}O \perp L\textsubscript{1}M, 
+\\
+L\textsubscript{2}O \perp L\textsubscript{2}M
+\end{align}
+\begin{itemize}
 \item Now,
 \begin{align}
- \implies (\vec{A}-\vec{P})^T (\vec{B}-\vec{P}) &= 0 \quad \brak{\because AP \perp BP }
+ \implies (\vec{O}-\vec{L})^T (\vec{L}-\vec{M}) &= 0
  \\
- \implies\vec{P}^T(\vec{B}-\vec{P})&= 0 \quad \brak{\because \vec{A}=0}
+ \implies\vec{L}^T(\vec{L}-\vec{M})&= 0 \quad \brak{\because \vec{O}=0}
  \\
-  \implies\vec{P}^T \vec{B} - \vec{P}^T \vec{P} &= 0  
+  \implies\vec{L}^T \vec{L} - \vec{L}^T \vec{M} &= 0  
   \\
-  \implies\norm{\vec{P}}^2 &= \vec{P}^T \vec{B}
+  \implies \vec{L}^T \vec{M} &=\norm{\vec{L}}^2
   \\
- \implies \norm{\vec{P}}^2 &= \vec{B}^T \vec{P} 
+ \implies   \vec{M}^T \vec{L} &=\norm{\vec{L}}^2
+  \end{align}
+  \item Now, using $\vec{M}$ =$\myvec{x\textsubscript{1} \\0}$ from \eqref{eq1} we get:
+  \begin{align}
+    \implies   \myvec{x\textsubscript{1}&0}\vec{L} &=\norm{\vec{L}}^2 
+    \\
+    \implies   \myvec{1&0}\vec{L} &=\myvec{\frac{\norm{\vec{L}}^2}{x\textsubscript{1}}\\0} 
+    \\
+    \implies \vec{L}&=\myvec{\frac{\norm{\vec{L}}^2}{x\textsubscript{1}}\\0} +\lambda\myvec{0\\1}
   \\
-  \implies \vec{B}^T \vec{P} &= 16 \quad \brak{\because \norm{\vec{P}}^2 = 16}
-  \\
-  \implies \myvec{8&0} \vec{P} &= 16 \quad \brak{\because \vec{B} = \myvec{8\\0} }
-  \\
-   \implies\myvec{1&0} \vec{P} &= 2
-   \\
-   \implies\vec{P} &= \myvec{2\\0} + \lambda \myvec{0\\1} 
-    \end{align}
+    \implies \vec{L}&=\vec{l}+\lambda\vec{m} 
+   \end{align}
     \begin{align}
-    \implies \vec{P}&=\vec{p}+\lambda\vec{m} \label{eqa}
-   \\
-   \text{where, }\vec{p}&=\myvec{2\\ 0}
-   \\
-   \text{and }\vec{m}&=\myvec{0\\1}
-\end{align}
-\item We know,
+   \text{where, }\vec{l}&=\myvec{\frac{\norm{\vec{L}}^2}{x\textsubscript{1}}\\0},\text{and }\vec{m}&=\myvec{0\\1}
+   \end{align}
+\item Also we know,
 \begin{align}
-\norm{\vec{p}+\lambda\vec{m}}^2&=16
+\norm{\vec{l}+\lambda\vec{m}}^2&=\norm{\vec{L}}^2
 \\
-(\vec{p}+\lambda \vec{m})^T(\vec{p}+\lambda \vec{m})&=16
+(\vec{l}+\lambda \vec{m})^T(\vec{l}+\lambda \vec{m})&=\norm{\vec{L}}^2
+\end{align}
+\begin{align}
+\lambda^2&=\frac{\norm{\vec{L}}^2-\norm{\vec{l}}^2}{\norm{\vec{m}}^2}
 \\
-\lambda^2&=\frac{16-\norm{\vec{p}}^2}{\norm{\vec{m}}^2}
-\end{align}
-\begin{align}
-  \lambda = \pm 3.46  
-\end{align}
-
-
-Substitute $\lambda$  value in \eqref{eqa} we get the coordinates of $\vec{P}$ and  $\vec{Q}$ as :
-\begin{align}
-\vec{P}=\myvec{2\\3.46},
-\vec{Q}=\myvec{2\\-3.46}
+\lambda &= \pm \sqrt{\frac{\norm{\vec{L}}^2-\norm{\vec{l}}^2}{\norm{\vec{m}}^2}} 
 \end{align}
 \end{itemize}
-
+\end{proof}
+\item For tangents at \textbf{Circle1} from point $\vec{B}$:-
+\begin{itemize}
+\item Referencing \eqref{eq2},we have
+\begin{align}
+ \vec{P}=\vec{p}+\lambda \vec{m}   \label{eqa}
+\end{align}
+where,
+\begin{align}
+ \vec{m}=\myvec{0\\1},\vec{p}=\myvec{\frac{\norm{\vec{P}}^2}{x\textsubscript{1}}\\0}
+ \end{align}
+ \item As $\norm{\vec{P}}^2$=16 and $\vec{B}=\myvec{x\textsubscript{1}\\0}=\myvec{8\\0}$, we get 
+ \begin{align}
+ \vec{p}=\myvec{\frac{16}{8}\\0}=\myvec{2\\0}
+\end{align}
+And
+\begin{align}
+\lambda &= \pm\sqrt{\frac{\norm{\vec{P}}^2-\norm{\vec{p}}^2}{\norm{\vec{m}}^2}}
+\\
+\lambda &= \pm\sqrt{16-4}
+\\
+\lambda &= \pm\sqrt{12}=\pm 3.46
+\end{align}
+\end{itemize}
+\item Substituting $\lambda$, $\vec{p}$ and $\vec{m}$ in \eqref{eqa} we get the coordinates of $\vec{P}$ and  $\vec{Q}$ as :
+\begin{align}
+\vec{P}&=\myvec{2\\0}+ 3.46\myvec{0\\1}&=\myvec{2\\3.46}
+\\
+\vec{Q}&=\myvec{2\\0}- 3.46\myvec{0\\1}&=\myvec{2\\-3.46}
+\end{align}
 \item For tangents at \textbf{Circle2} from $\vec{A}$:-
 \begin{itemize}
 \item In $\triangle$ ABR, using Pythagoras Theorem,we get:
@@ -245,57 +282,39 @@ Substitute $\lambda$  value in \eqref{eqa} we get the coordinates of $\vec{P}$ a
     \norm{\vec{R}}^2= 8^2 -3^2=55 \label{eqc}
 \end{align}
 \end{itemize}
-\item Let $AR$ and $AS$  be tangents to \textbf{Circle2} with radius 3 units.
+
+
 \begin{itemize}
-\item We know a tangent is always perpendicular to the radius .
+\item Referencing \eqref{eq2},we have
 \begin{align}
-\therefore AR \perp BR ,  AS \perp BS.
+ \vec{R}=\vec{r}+\lambda \vec{m}   \label{eqb}
 \end{align}
-\item Now,
+where,
 \begin{align}
- \implies (\vec{A}-\vec{R})^T (\vec{B}-\vec{R}) &= 0 \quad \brak{\because AR \perp BR }
- \\
- \implies\vec{R}^T(\vec{B}-\vec{R})&= 0 \quad \brak{\because \vec{A}=0}
- \\
-  \implies\vec{R}^T \vec{B} - \vec{R}^T \vec{R} &= 0  
-  \\
-  \implies\norm{\vec{R}}^2 &= \vec{R}^T \vec{B}
-  \\
- \implies \norm{\vec{R}}^2 &= \vec{B}^T \vec{R} 
-  \end{align}
-  \item Now, we have $\norm{\vec{R}}^2 =55$, putting the value in above equation we get:
-  \begin{align}
-  \implies \vec{B}^T \vec{R} &= 55 
-  \\
-  \implies \myvec{8&0} \vec{R} &= 55 \quad \brak{\because \vec{B} = \myvec{8\\0} }
-  \\
-   \implies\myvec{1&0} \vec{R} &= \frac{55}{8}
-   \\
-   \implies\vec{R} &= \myvec{\frac{55}{8}\\0} + \mu \myvec{0\\1} 
-    \\
-    \implies \vec{R}&=\vec{r}+\mu\vec{m} \label{eqb}
-   \\
-   \text{where, }\vec{r}&=\myvec{\frac{55}{8}\\0}
-   \\
-   \text{and }\vec{m}&=\myvec{0\\1}
+ \vec{m}=\myvec{0\\1},\vec{r}=\myvec{\frac{\norm{\vec{R}}^2}{x\textsubscript{1}}\\0}
+ \end{align}
+ \item As $\vec{B}=\myvec{x\textsubscript{1}\\0}=\myvec{8\\0}$ and  from \eqref{eqc} $\norm{\vec{R}}^2$=55, we get 
+ \begin{align}
+ \vec{r}=\myvec{\frac{55}{8}\\0}=\myvec{6.875\\0}
 \end{align}
-\item We know,
+And
 \begin{align}
-\norm{\vec{r}+\mu\vec{m}}^2&=55
+\lambda &= \pm\sqrt{\frac{\norm{\vec{R}}^2-\norm{\vec{r}}^2}{\norm{\vec{m}}^2}}
 \\
-(\vec{r}+\mu \vec{m})^T(\vec{r}+\mu \vec{m})&=55
+\lambda &= \pm\sqrt{55-47.265}
 \\
-\mu^2&=\frac{55-\norm{\vec{r}}^2}{\norm{\vec{m}}^2}
-\\
-\mu &= \pm 2.78
-\end{align}
-Substitute $\mu$  value in \eqref{eqb} we get the coordinates of $\vec{R}$ and  $\vec{S}$ as :
-\begin{align}
-\vec{R}=\myvec{6.875\\2.78},
-\vec{S}=\myvec{6.875\\-2.78}
+\lambda &= \pm\sqrt{7.735}=\pm 2.78
 \end{align}
 \end{itemize}
-\end{enumerate}
+\item Substituting $\lambda$, $\vec{r}$ and $\vec{m}$ in \eqref{eqb} we get the coordinates of $\vec{R}$ and  $\vec{S}$ as :
+\begin{align}
+\vec{R}&=\myvec{6.875\\0}+ 2.78\myvec{0\\1}&=\myvec{6.875\\2.78}
+\\
+\vec{S}&=\myvec{6.875\\0}- 2.78\myvec{0\\1}&=\myvec{6.875\\-2.78}
+\end{align}
+
+
+
 
 \numberwithin{figure}{section}
 \begin{figure}[H]
@@ -304,4 +323,5 @@ Substitute $\mu$  value in \eqref{eqb} we get the coordinates of $\vec{R}$ and  
 \caption{Tangents from centres of Circle}
 \label{fig:circle}	
 \end{figure}
+\end{enumerate}
 \end{document}
