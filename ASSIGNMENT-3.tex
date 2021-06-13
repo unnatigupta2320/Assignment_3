@@ -177,7 +177,7 @@ Radius & $r_{1}$,$r_{2}$ & 4 & 3 \\
     \begin{align}
     \vec{M} =\myvec{x\textsubscript{1} \\0} \label{eq1}
     \end{align}
-    \item Tangents are drawn from $\vec{M}$ to any circle with centre $\vec{C}$.
+    \item Tangents are drawn from $\vec{M}$ to any circle with centre $\vec{O}$ at origin and radius \textbf{r\textsubscript{n}}.
 \end{itemize}
 \begin{lemma}
 \label{lemma}
@@ -187,20 +187,10 @@ The coordinates of points $\vec{N\textsubscript{1}}$ and $\vec{N\textsubscript{2
 \\
 \text{where, }\vec{m}=\myvec{0\\1} 
 \\
-\vec{n}=\myvec{\frac{d}{x\textsubscript{1}}\\0}
+\vec{n}=\myvec{\frac{r\textsubscript{n}^2}{x\textsubscript{1}}\\0}
 \\
-\lambda = \pm\sqrt{\frac{d-\norm{\vec{n}}^2}{\norm{\vec{m}}^2}}
-\\
-d=\abs{d\textsubscript{CO}^2-r\textsubscript{n}^2}
+\lambda = \pm\sqrt{\frac{r\textsubscript{n}^2-\norm{\vec{n}}^2}{\norm{\vec{m}}^2}}
 \end{align}
-\begin{itemize}
-    \item In $\vec{d}=\abs{d\textsubscript{CO}^2-r\textsubscript{n}^2}$ we have:
-    \\
-    d\textsubscript{CO} = distance of \textbf{centre} $\vec{C}$ of circle from origin $\vec{O}$.
-    \item And 
-    \\
-    r\textsubscript{n} = \textbf{radius} of circle
-\end{itemize}
 \end{lemma}
 \begin{proof}
 We know a tangent is always perpendicular to the radius .
@@ -221,73 +211,54 @@ N\textsubscript{2}O \perp N\textsubscript{2}M
    \vec{N}^T \vec{M} &=\norm{\vec{N}}^2
   \end{align}
  \begin{align}
-  \implies\vec{M}^T \vec{N} =\norm{\vec{N}}^2 (\because \vec{N}^T \vec{M}=\vec{M}^T \vec{N}) \label{eqZ}
+  \implies\vec{M}^T \vec{N} =\norm{\vec{N}}^2 (\because \vec{N}^T \vec{M}=\vec{M}^T \vec{N}) 
  \end{align}
-\item Let,
-  \\
-  d\textsubscript{CO} = distance of \textbf{centre} of circle $\vec{C}$ from origin $\vec{O}$.
-  \\
-  and,  r\textsubscript{n} = \textbf{radius} of circle
-  \\
-\item We get \textbf{d} as 
+\item Now,using \eqref{eq1} in above equation we get:
 \begin{align}
-    d = \abs{d\textsubscript{CO}^2-r\textsubscript{n}^2}
-    \end{align}
-\item Now, putting value of $\vec{M}$ =$\myvec{x\textsubscript{1} \\0}$ from \eqref{eq1} in \eqref{eqZ} we get:
-\begin{align}
-    \implies   \myvec{x\textsubscript{1}&0}\vec{N} &=\myvec{d\\0} 
+    \implies  \myvec{x\textsubscript{1}&0}\vec{N} &=r\textsubscript{n}^2 
     \\
-    \implies   \myvec{1&0}\vec{N} &=\myvec{\frac{d}{x\textsubscript{1}}\\0} 
+    \implies   \myvec{1&0}\vec{N} &=\myvec{\frac{r\textsubscript{n}^2}{x\textsubscript{1}}\\0} 
     \\
-    \implies \vec{N}&=\myvec{\frac{d}{x\textsubscript{1}}\\0} +\lambda\myvec{0\\1}
+    \implies \vec{N}&=\myvec{\frac{r\textsubscript{n}^2}{x\textsubscript{1}}\\0} +\lambda\myvec{0\\1}
   \\
     \implies \vec{N}&=\vec{n}+\lambda\vec{m} 
    \end{align}
     \begin{align}
-   \text{where, }\vec{n}&=\myvec{\frac{d}{x\textsubscript{1}}\\0} \text{and }\vec{m}=\myvec{0\\1}
+   \text{where, }\vec{n}&=\myvec{\frac{r\textsubscript{n}^2}{x\textsubscript{1}}\\0} \text{and }\vec{m}=\myvec{0\\1}
    \end{align}
 \item Also we know,
 \begin{align}
-\norm{\vec{n}+\lambda\vec{m}}^2&=d^2
+\norm{\vec{n}+\lambda\vec{m}}^2&=r\textsubscript{n}^2
 \\
-(\vec{n}+\lambda \vec{m})^T(\vec{n}+\lambda \vec{m})&=d^2
+(\vec{n}+\lambda \vec{m})^T(\vec{n}+\lambda \vec{m})&=r\textsubscript{n}^2
 \end{align}
 \begin{align}
-\lambda^2&=\frac{d^2-\norm{\vec{n}}^2}{\norm{\vec{m}}^2}
+\lambda^2&=\frac{r\textsubscript{n}^2-\norm{\vec{n}}^2}{\norm{\vec{m}}^2}
 \\
-\lambda &= \pm \sqrt{\frac{d^2-\norm{\vec{n}}^2}{\norm{\vec{m}}^2}} 
+\lambda &= \pm \sqrt{\frac{r\textsubscript{n}^2-\norm{\vec{n}}^2}{\norm{\vec{m}}^2}} 
 \end{align}
 \end{itemize}
 \end{proof}
 \item For tangents at \textbf{Circle1} from point $\vec{B}$:-
 \begin{itemize}
-\item Here, we have r\textsubscript{1}=4, So \textbf{d\textsubscript{1}} is given by,
-\begin{align}
- \textbf{d\textsubscript{1}} = \abs{d\textsubscript{CO}^2-r\textsubscript{1}^2}
- \end{align}
-\item  As  centre is at origin so d\textsubscript{CO}=0,we get:
-\begin{align}
- \implies d\textsubscript{1}=\abs{-r\textsubscript{1}^2} 
- \\
-  \therefore  d\textsubscript{1}=16 \label{eqY}
-\end{align}
-\item Referencing \eqref{eq2},we have
+\item Here, we have r\textsubscript{1}=4
+\item Now,referencing \eqref{eq2},we have
 \begin{align}
  \vec{P}=\vec{p}+\lambda\textsubscript{1}\vec{m}   \label{eqa}
 \end{align}
 where,
 \begin{align}
- \vec{m}=\myvec{0\\1},\vec{p}=\myvec{\frac{d\textsubscript{1}}{x\textsubscript{1}}\\0}
+ \vec{m}=\myvec{0\\1},\vec{p}=\myvec{\frac{r\textsubscript{1}}{x\textsubscript{1}}\\0}
  \end{align}
- \item Using \eqref{eqY} and $\vec{B}=\myvec{x\textsubscript{1}\\0}=\myvec{8\\0}$, we get 
+ \item Using $\vec{B}=\myvec{x\textsubscript{1}\\0}=\myvec{8\\0}$, we get: 
  \begin{align}
  \vec{p}=\myvec{\frac{16}{8}\\0}=\myvec{2\\0}
 \end{align}
 And
 \begin{align}
-\lambda\textsubscript{1} &= \pm\sqrt{\frac{d\textsubscript{1}-\norm{\vec{p}}^2}{\norm{\vec{m}}^2}}
+\lambda\textsubscript{1} &= \pm\sqrt{\frac{r\textsubscript{1}-\norm{\vec{p}}^2}{\norm{\vec{m}}^2}}
 \\
-\lambda\textsubscript{1} &= \pm\sqrt{16-4}
+\lambda\textsubscript{1} &= \pm\sqrt{\frac{16-4}{1}}
 \\
 \lambda\textsubscript{1} &= \pm\sqrt{12}=\pm 3.46
 \end{align}
