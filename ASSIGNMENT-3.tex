@@ -181,13 +181,18 @@ Radius & $r_{1}$,$r_{2}$ & 4 & 3 \\
 \end{itemize}
 \begin{lemma}
 \label{lemma}
-The coordinates of points $\vec{L\textsubscript{1}}$ and $\vec{L\textsubscript{2}}$ where tangent touches the circle are given by:
+The coordinates of points $\vec{N\textsubscript{1}}$ and $\vec{N\textsubscript{2}}$ where tangent touches the circle are given by:
 \begin{align}
-\vec{L}=\vec{l}+\lambda \vec{m} \label{eq2}
+\vec{N}=\myvec{x\textsubscript{n}\\y\textsubscript{n}}=\vec{n}+\lambda \vec{m} \label{eq2}
 \\
-\text{ where, }  \lambda = \pm\sqrt{\frac{\norm{\vec{L}}^2-\norm{\vec{l}}}{\norm{\vec{m}}^2}}
 \\
-\vec{l}=\myvec{\frac{\norm{\vec{L}}^2}{x\textsubscript{1}}\\0}
+\text{where, }\lambda = \pm\sqrt{\frac{\norm{d\textsubscript{n}}^2-\norm{\vec{n}}^2}{\norm{\vec{m}}^2}}
+\end{align}
+And d\textsubscript{n} will be distance of point $\vec{N}$ where tangent touches the circle from origin $\vec{O}$.
+\begin{align}
+\therefore d\textsubscript{n}=\norm{\vec{N}}^2=\norm{x\textsubscript{n}^2+y\textsubscript{n}^2} 
+\\
+\vec{n}=\myvec{\frac{d\textsubscript{n}}{x\textsubscript{1}}\\0}
 \\
 \vec{m}=\myvec{0\\1} 
 \end{align}
@@ -195,66 +200,81 @@ The coordinates of points $\vec{L\textsubscript{1}}$ and $\vec{L\textsubscript{2
 \begin{proof}
 We know a tangent is always perpendicular to the radius .
 \begin{align}
-\therefore L\textsubscript{1}O \perp L\textsubscript{1}M, 
+\therefore N\textsubscript{1}O \perp N\textsubscript{1}M, 
 \\
-L\textsubscript{2}O \perp L\textsubscript{2}M
+N\textsubscript{2}O \perp N\textsubscript{2}M
 \end{align}
 \begin{itemize}
 \item Now,
 \begin{align}
- \implies (\vec{O}-\vec{L})^T (\vec{L}-\vec{M}) &= 0
+ \implies (\vec{O}-\vec{N})^T (\vec{N}-\vec{M}) &= 0
  \\
- \implies\vec{L}^T(\vec{L}-\vec{M})&= 0 \quad \brak{\because \vec{O}=0}
+ \vec{N}^T(\vec{N}-\vec{M})&= 0 \quad \brak{\because \vec{O}=0}
  \\
-  \implies\vec{L}^T \vec{L} - \vec{L}^T \vec{M} &= 0  
+  \vec{N}^T \vec{N} - \vec{N}^T \vec{M} &= 0  
   \\
-  \implies \vec{L}^T \vec{M} &=\norm{\vec{L}}^2
-  \\
- \implies   \vec{M}^T \vec{L} &=\norm{\vec{L}}^2
+   \vec{N}^T \vec{M} &=\norm{\vec{N}}^2
   \end{align}
-  \item Now, using $\vec{M}$ =$\myvec{x\textsubscript{1} \\0}$ from \eqref{eq1} we get:
   \begin{align}
-    \implies   \myvec{x\textsubscript{1}&0}\vec{L} &=\norm{\vec{L}}^2 
+  \implies\vec{M}^T \vec{N} =\norm{\vec{N}}^2 (\because \vec{N}^T \vec{M}=\vec{M}^T \vec{N}) \label{eqZ}
+  \end{align}
+  \item Now,let distance of point $\vec{N}$ from origin be d\textsubscript{n}.
+  \begin{align}
+  \implies \norm{\vec{N}-\vec{O}}^2=\norm{\vec{N}}^2=d\textsubscript{n}   
+  \end{align}
+  \item Now, putting value of $\vec{M}$ =$\myvec{x\textsubscript{1} \\0}$ from \eqref{eq1} in \eqref{eqZ} we get:
+  \begin{align}
+    \implies   \myvec{x\textsubscript{1}&0}\vec{N} &=\myvec{d\textsubscript{n}^2\\0}  
     \\
-    \implies   \myvec{1&0}\vec{L} &=\myvec{\frac{\norm{\vec{L}}^2}{x\textsubscript{1}}\\0} 
+    \implies   \myvec{1&0}\vec{N} &=\myvec{\frac{d\textsubscript{n}^2 }{x\textsubscript{1}}\\0} 
     \\
-    \implies \vec{L}&=\myvec{\frac{\norm{\vec{L}}^2}{x\textsubscript{1}}\\0} +\lambda\myvec{0\\1}
+    \implies \vec{N}&=\myvec{\frac{d\textsubscript{n}^2 }{x\textsubscript{1}}\\0} +\lambda\myvec{0\\1}
   \\
-    \implies \vec{L}&=\vec{l}+\lambda\vec{m} 
+    \implies \vec{N}&=\vec{n}+\lambda\vec{m} 
    \end{align}
     \begin{align}
-   \text{where, }\vec{l}&=\myvec{\frac{\norm{\vec{L}}^2}{x\textsubscript{1}}\\0},\text{and }\vec{m}&=\myvec{0\\1}
+   \text{where, }\vec{n}&=\myvec{\frac{d\textsubscript{n}^2 }{x\textsubscript{1}}\\0} \text{and }\vec{m}=\myvec{0\\1}
    \end{align}
 \item Also we know,
 \begin{align}
-\norm{\vec{l}+\lambda\vec{m}}^2&=\norm{\vec{L}}^2
+\norm{\vec{n}+\lambda\vec{m}}^2&=d\textsubscript{n}^2
 \\
-(\vec{l}+\lambda \vec{m})^T(\vec{l}+\lambda \vec{m})&=\norm{\vec{L}}^2
+(\vec{n}+\lambda \vec{m})^T(\vec{n}+\lambda \vec{m})&=d\textsubscript{n}^2
 \end{align}
 \begin{align}
-\lambda^2&=\frac{\norm{\vec{L}}^2-\norm{\vec{l}}^2}{\norm{\vec{m}}^2}
+\lambda^2&=\frac{d\textsubscript{n}^2-\norm{\vec{n}}^2}{\norm{\vec{m}}^2}
 \\
-\lambda &= \pm \sqrt{\frac{\norm{\vec{L}}^2-\norm{\vec{l}}^2}{\norm{\vec{m}}^2}} 
+\lambda &= \pm \sqrt{\frac{d\textsubscript{n}^2-\norm{\vec{l}}^2}{\norm{\vec{m}}^2}} 
 \end{align}
 \end{itemize}
 \end{proof}
 \item For tangents at \textbf{Circle1} from point $\vec{B}$:-
 \begin{itemize}
+\item Here, we have r\textsubscript{1}=4, So $\norm{\vec{P}}^2$ is given by,
+\begin{align}
+ \norm{\vec{P}-\vec{O}}^2=\norm{\vec{P}}^2=r\textsubscript{1}
+ \\
+ \norm{\vec{P}}^2=r\textsubscript{1}=4
+ \\
+ \implies d\textsubscript{n1}=4
+ \\
+  \therefore  d\textsubscript{n1}^2=16 \label{eqY}
+\end{align}
 \item Referencing \eqref{eq2},we have
 \begin{align}
  \vec{P}=\vec{p}+\lambda \vec{m}   \label{eqa}
 \end{align}
 where,
 \begin{align}
- \vec{m}=\myvec{0\\1},\vec{p}=\myvec{\frac{\norm{\vec{P}}^2}{x\textsubscript{1}}\\0}
+ \vec{m}=\myvec{0\\1},\vec{p}=\myvec{\frac{d\textsubscript{n1}^2}{x\textsubscript{1}}\\0}
  \end{align}
- \item As $\norm{\vec{P}}^2$=16 and $\vec{B}=\myvec{x\textsubscript{1}\\0}=\myvec{8\\0}$, we get 
+ \item Using \eqref{eqY} and $\vec{B}=\myvec{x\textsubscript{1}\\0}=\myvec{8\\0}$, we get 
  \begin{align}
  \vec{p}=\myvec{\frac{16}{8}\\0}=\myvec{2\\0}
 \end{align}
 And
 \begin{align}
-\lambda &= \pm\sqrt{\frac{\norm{\vec{P}}^2-\norm{\vec{p}}^2}{\norm{\vec{m}}^2}}
+\lambda &= \pm\sqrt{\frac{d\textsubscript{n1}^2-\norm{\vec{p}}^2}{\norm{\vec{m}}^2}}
 \\
 \lambda &= \pm\sqrt{16-4}
 \\
@@ -279,7 +299,11 @@ And
     \begin{align}
     \norm{\vec{R}}^2 = \norm{\vec{A}-\vec{B}}^2 - \norm{\vec{B}-\vec{R}}^2 
     \\
-    \norm{\vec{R}}^2= 8^2 -3^2=55 \label{eqc}
+    \norm{\vec{R}}^2=\sqrt{8^2 -3^2}=7.42
+    \\
+   \implies d\textsubscript{n2}=7.42
+    \\
+    \therefore d\textsubscript{n2}^2=55\label{eqc}
 \end{align}
 \end{itemize}
 
@@ -291,15 +315,15 @@ And
 \end{align}
 where,
 \begin{align}
- \vec{m}=\myvec{0\\1},\vec{r}=\myvec{\frac{\norm{\vec{R}}^2}{x\textsubscript{1}}\\0}
+ \vec{m}=\myvec{0\\1},\vec{r}=\myvec{\frac{d\textsubscript{n2}^2}{x\textsubscript{1}}\\0}
  \end{align}
- \item As $\vec{B}=\myvec{x\textsubscript{1}\\0}=\myvec{8\\0}$ and  from \eqref{eqc} $\norm{\vec{R}}^2$=55, we get 
+ \item Using \eqref{eqc} and $\vec{B}=\myvec{x\textsubscript{1}\\0}=\myvec{8\\0}$ we get :
  \begin{align}
  \vec{r}=\myvec{\frac{55}{8}\\0}=\myvec{6.875\\0}
 \end{align}
 And
 \begin{align}
-\lambda &= \pm\sqrt{\frac{\norm{\vec{R}}^2-\norm{\vec{r}}^2}{\norm{\vec{m}}^2}}
+\lambda &= \pm\sqrt{\frac{\norm{d\textsubscript{n2}}^2-\norm{\vec{r}}^2}{\norm{\vec{m}}^2}}
 \\
 \lambda &= \pm\sqrt{55-47.265}
 \\
